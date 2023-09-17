@@ -8,7 +8,7 @@ import { AccordionContext } from "@/context/AccordionContext";
 type Props = {};
 
 const TabBar = (props: Props) => {
-  const height = useWindowDimensions();
+  const { height, width } = useWindowDimensions();
   const [tabBarHeight, setTabBarHeight] = useState(125);
   const [displayBar, setDisplayBar] = useState("flex");
   const [active, setActive] = useState(0);
@@ -79,21 +79,31 @@ const TabBar = (props: Props) => {
       setTabBarHeight(35);
     }
     if (height < 200 && tabBarHeight < 125) {
+      if (width < 768) {
+        setTabBarHeight(35);
+        return;
+      }
       setTabBarHeight(125);
+    }
+    if (width < 768 && tabBarHeight === 125) {
+      setTabBarHeight(35);
     }
     if (height > Number(footerH)) {
       setDisplayBar("none");
     } else {
       setDisplayBar("flex");
     }
-  }, [height]);
+  }, [height, width]);
 
   useEffect(() => {
     setItemsHeightHandler();
   }, [open]);
 
   useEffect(() => {
-    autoTabBarActiveControl();
+    //Contact is always at the bottom; this is to make sure values are set
+    if (itemsHeight.contact) {
+      autoTabBarActiveControl();
+    }
   }, [height]);
 
   const icons = [
@@ -130,7 +140,7 @@ const TabBar = (props: Props) => {
         bottom: `${tabBarHeight}px`,
         transition: "bottom 0.5s ease",
       }}
-      className={`content-center items-center z-[101] sticky backdrop-blur left-[calc(50%-175px)] w-[350px] h-[70px] rounded-[35px] bg-tabbar_bg`}
+      className={`content-center items-center z-[101] fixed backdrop-blur left-[calc(50%-175px)] w-[350px] h-[70px] rounded-[35px] bg-tabbar_bg`}
     >
       <div className="flex flex-1 gap-[25px] justify-center">
         {icons.map((icon, index) => {

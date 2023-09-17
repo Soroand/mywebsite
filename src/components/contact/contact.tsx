@@ -95,7 +95,7 @@ const Contact = (props: Props) => {
             required
             control={<Checkbox />}
             label={
-              <Typography className="text-[14px] opacity-50">
+              <Typography className="text-[14px] opacity-50 text-left">
                 I agree that my personal information will be processed and
                 stored by this website.
               </Typography>

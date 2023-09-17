@@ -1,5 +1,5 @@
 .MuiFormLabel-root {
-  color: #fff;
+  color: #fff !important;
 }
 .MuiInput-underline:before {
   border-color: #ffffff !important;
