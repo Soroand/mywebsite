@@ -50,7 +50,7 @@ const AboutMe = (props: Props) => {
   return (
     <div
       ref={blockRef}
-      className="flex flex-col max-w-[1000px] mx-auto pt-[80px] md:pt-[100px]"
+      className="flex flex-col max-w-[1000px] mx-auto pt-[25px] md:pt-[100px]"
     >
       <div className="w-full">
         <h5 className="text-center text-text_white font-[500]">Get to know</h5>

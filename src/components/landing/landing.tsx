@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./home.css";
 import CustomButton from "../reusable/button";
 import ScrollDown from "../../../public/assets/svg/ScrollDownArrow";
@@ -13,6 +13,8 @@ const HomePage = (props: Props) => {
   // generate vertical lines from top to bottom on bg
   const lines = [];
   const colorClasses = ["bg_1", "bg_2", "bg_3", "bg_4"];
+  const [width, setWidth] = useState(0);
+
   //Block position
   const blockRef = useRef(null);
   useBlockRef({ key: "landingPosition", blockRef });
@@ -33,6 +35,12 @@ const HomePage = (props: Props) => {
       ></div>
     );
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+    }
+  }, []);
 
   return (
     <div>
@@ -57,7 +65,9 @@ const HomePage = (props: Props) => {
               Let's talk
             </CustomButton>
           </div>
-          <ScrollDown className="absolute bottom-5 hover: cursor-pointer animate-bounce" />
+          {width > 768 ? (
+            <ScrollDown className="absolute bottom-5 hover: cursor-pointer animate-bounce" />
+          ) : null}
         </div>
       </div>
     </div>

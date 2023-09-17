@@ -66,7 +66,8 @@ const Footer = (props: Props) => {
               >
                 <Link target="_blank" href={item.link}>
                   <Image
-                    className="animate-glow rounded-sm hover:cursor-pointer"
+                    // className="animate-glow rounded-sm hover:cursor-pointer"
+                    className=" rounded-sm hover:cursor-pointer"
                     alt={item.alt}
                     src={item.iconUrl}
                     width={24}
