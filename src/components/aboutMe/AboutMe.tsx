@@ -97,17 +97,19 @@ const AboutMe = (props: Props) => {
           </div>
           <div className="mt-[48px] ">
             <p className="text-text_gray px-[2rem] sm:px-[0] text-[16px] font-[500] leading-[160%]">
-              Lorem ipsum dolor sit amet consectetur. Amet pretium et proin at
-              commodo amet. Urna libero nec sed amet viverra faucibus. Eu purus
-              diam porttitor ultricies diam cum morbi ultricies. Quis lorem
-              posuere malesuada gravida. Lacus morbi sollicitudin pulvinar enim
-              imperdiet at. Pellentesque nunc nibh ac maecenas elementum ornare.
-              Nunc neque viverra at facilisi quis. Lectus non commodo orci eget
-              mi mauris mauris. Libero blandit diam curabitur tincidunt pulvinar
-              ipsum. Et a laoreet ullamcorper montes purus. Sed faucibus
-              sagittis nisi amet ut duis sit. Eget sagittis vestibulum bibendum
-              at interdum aliquam ac. Cras semper porta id donec etiam
-              tincidunt.{" "}
+              Hello! I'm Andrey Sorokin, a passionate and experienced full-stack
+              software developer with over four years of hands-on development
+              experience. I have successfully completed more than 20 diverse
+              projects, showcasing my expertise in crafting robust and
+              innovative solutions for a wide range of clients and industries.
+              My journey into the world of software development began with a
+              burning curiosity and a love for problem-solving. Over the years,
+              I have honed my skills, constantly seeking opportunities to expand
+              my knowledge and keep up with the ever-evolving tech landscape.
+              This journey has not only equipped me with a deep understanding of
+              software architecture but has also instilled in me a commitment to
+              delivering high-quality, scalable, and efficient software
+              solutions.
             </p>
           </div>
         </div>

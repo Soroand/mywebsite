@@ -5,8 +5,9 @@ type Props = {
   children: React.ReactNode;
   styles?: string;
   variant?: "primary" | "hollow";
-  type?: "button" | "link";
+  type?: "button" | "link" | "submit";
   url?: string;
+  onClick?: () => void;
 };
 
 type Variant = {
@@ -24,6 +25,7 @@ type Variant = {
 type BtnType = {
   button: string;
   link: string;
+  submit: string;
 };
 
 const CustomButton = (props: Props) => {
@@ -44,8 +46,9 @@ const CustomButton = (props: Props) => {
 
   return (
     <>
-      {!props.type ? (
+      {!props.type || props.type === "submit" ? (
         <button
+          onClick={props.onClick}
           className={`${
             buttonVariants[props?.variant || "default"]
               .container as keyof Variant

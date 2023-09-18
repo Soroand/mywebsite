@@ -6,6 +6,8 @@ import ScrollDown from "../../../public/assets/svg/ScrollDownArrow";
 import LinkedIn from "../../../public/assets/svg/LinkedIn";
 import Github from "../../../public/assets/svg/Github";
 import useBlockRef from "@/hooks/useBlockRef";
+import Link from "next/link";
+import CircularProgress from "@mui/material/CircularProgress";
 
 type Props = {};
 
@@ -42,14 +44,26 @@ const HomePage = (props: Props) => {
     }
   }, []);
 
+  const scrollToContact = () => {
+    const contact = localStorage?.getItem("contactPosition") || 0;
+    window.scrollTo({ top: contact as number, behavior: "smooth" });
+  };
+
   return (
     <div>
       <div className="flex flex-1 relative w-full h-screen overflow-hidden flex-col">
         {lines}
         <div className="h-screen w-[100%] flex flex-col justify-center flex-1 max-w-[1000px] self-center mx-auto items-center text-center text-text_white z-100 relative">
           <div className="absolute top-[45%] left-0 flex flex-col gap-5 ml-5">
-            <LinkedIn className="animate-glow rounded-sm hover:cursor-pointer" />
-            <Github className="animate-glow rounded-sm hover:cursor-pointer" />
+            <Link
+              href="https://www.linkedin.com/in/andrey-sorokin-dev/"
+              target="_blank"
+            >
+              <LinkedIn className="animate-glow rounded-sm hover:cursor-pointer" />
+            </Link>
+            <Link href="https://github.com/Soroand" target="_blank">
+              <Github className="animate-glow rounded-sm hover:cursor-pointer" />
+            </Link>
           </div>
 
           <h3 className="text-[20px] mb-3">Hey, I'm</h3>
@@ -60,8 +74,19 @@ const HomePage = (props: Props) => {
             Fullstack Developer
           </h3>
           <div className="flex gap-[35px] justify-evenly">
-            <CustomButton variant="hollow">Download CV</CustomButton>
-            <CustomButton styles={"mt-[82px]"} variant="primary">
+            <Link
+              href={"/andrey_sorokin_cv.pdf"}
+              download={"/andrey_sorokin_cv.pdf"}
+              target="_blank"
+              // rel="noopener noreferrer"
+            >
+              <CustomButton variant="hollow">Download CV</CustomButton>
+            </Link>
+            <CustomButton
+              onClick={() => scrollToContact()}
+              styles={"mt-[82px]"}
+              variant="primary"
+            >
               Let's talk
             </CustomButton>
           </div>
