@@ -1,5 +1,5 @@
 "use client";
-import { use, useRef } from "react";
+import { useState, useRef } from "react";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
@@ -10,6 +10,8 @@ import { Typography } from "@mui/material";
 import useBlockRef from "@/hooks/useBlockRef";
 import { AccordionContext } from "@/context/AccordionContext";
 import { useContext } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import { setConstantValue } from "typescript";
 
 type Props = {};
 
@@ -17,6 +19,47 @@ const Contact = (props: Props) => {
   const blockRef = useRef(null);
   const { open } = useContext(AccordionContext);
   useBlockRef({ key: "contactPosition", blockRef, open });
+  const [consent, setConsent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const resetForm = (e: React.FormEvent<HTMLFormElement>) => {
+    const event = e as any;
+    // reset form
+    event.target[0].value = "";
+    event.target[1].value = "";
+    event.target[2].value = "";
+    event.target[3].value = "";
+    event.target[4].value = "";
+    event.target[5].value = "";
+    setConsent(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    const event = e as any;
+
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_SEND_EMAIL_URL}/send`, {
+        method: "POST",
+        body: JSON.stringify({
+          name: event.target[0].value,
+          email: event.target[1].value,
+          subject: event.target[2].value,
+          phone: event.target[3].value,
+          company: event.target[4].value,
+          message: event.target[5].value,
+        }),
+      })
+        .then((res) => {
+          alert("Email sent successfully!");
+          resetForm(event);
+        })
+        .catch((err) => alert("Error sending email, please try again."))
+        .finally(() => setLoading(false));
+    } catch (error) {
+      console.log("Error sending email", error);
+    }
+  };
 
   return (
     <div
@@ -29,7 +72,7 @@ const Contact = (props: Props) => {
       </h2>
       <div className="w-full max-w-[850px]">
         {/* contact form */}
-        <form className="flex flex-col mt-[32px]">
+        <form onSubmit={handleSubmit} className="flex flex-col mt-[32px]">
           <div className="flex flex-col md:flex-row gap-5">
             <div className="flex flex-col md:w-[50%]">
               <TextField
@@ -94,6 +137,8 @@ const Contact = (props: Props) => {
             className="mt-12"
             required
             control={<Checkbox />}
+            value={consent}
+            onChange={() => setConsent(!consent)}
             label={
               <Typography className="text-[14px] opacity-50 text-left">
                 I agree that my personal information will be processed and
@@ -101,19 +146,27 @@ const Contact = (props: Props) => {
               </Typography>
             }
           />
+
           <CustomButton
             styles="max-w-[250px] mt-[60px] self-center"
             variant="primary"
+            // type="submit"
           >
-            <span className="flex content-center items-center font-[500] text-[16px] uppercase">
-              Let's Talk
-              <Image
-                className="ml-2"
-                alt="arrow right"
-                src="/assets/svg/Arrow_lets_talk.svg"
-                width={32}
-                height={32}
-              />
+            <span className="flex content-center items-center font-[500] text-[16px] uppercase w-full h-full">
+              {loading ? (
+                <CircularProgress />
+              ) : (
+                <>
+                  Let's Talk
+                  <Image
+                    className="ml-2"
+                    alt="arrow right"
+                    src="/assets/svg/Arrow_lets_talk.svg"
+                    width={32}
+                    height={32}
+                  />
+                </>
+              )}
             </span>
           </CustomButton>
         </form>

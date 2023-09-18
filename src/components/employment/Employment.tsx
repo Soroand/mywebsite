@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import useBlockRef from "@/hooks/useBlockRef";
 import { AccordionContext } from "@/context/AccordionContext";
+import { convertHtmlToReact } from "@hedgedoc/html-to-react";
+import { employment } from "@/components/employment/MockData";
 
 type Props = {};
 
@@ -27,64 +29,6 @@ const Employment = (props: Props) => {
     }
   }, [open]);
 
-  const employment = [
-    {
-      id: 1,
-      name: "Fullstack Developer",
-      company: "Many Hats Software",
-      date: "2022 - Present",
-      place: "Vancouver, Canada",
-      link: "https://www.wewearmanyhats.com",
-      description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
-      skills: [
-        "React",
-        "NextJS",
-        "Redux",
-        "React Native",
-        "NodeJS",
-        "MongoDB",
-        "Google Cloud",
-        "AWS",
-      ],
-    },
-    {
-      id: 2,
-      name: "Fullstack Developer",
-      company: "1511 Paris",
-      date: "Contract job",
-      place: "Paris, France",
-      link: "https://www.1511.paris",
-      description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
-      skills: [
-        "React",
-        "Redux",
-        "NodeJS",
-        "MongoDB",
-        "Firebase Authentication",
-        "AWS",
-      ],
-    },
-    {
-      id: 3,
-      name: "Frontend Developer",
-      company: "Rocket Firm Ltd",
-      date: "2020 - 2022",
-      place: "Astana, Kazakhstan",
-      link: "https://rocketfirm.com",
-      description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
-      skills: [
-        "React",
-        "Redux",
-        "React Native",
-        "Google Cloud",
-        "AWS",
-        "Firebase",
-      ],
-    },
-  ];
   return (
     <div
       ref={blockRef}
@@ -167,8 +111,8 @@ const Employment = (props: Props) => {
                         </Link>
                       </div>
                     </div>
-                    <span className="block mt-8 text-[18px] text-left font-[500]">
-                      {item.description}
+                    <span className="block mt-8 text-[16px] text-left font-[500] text-gray-200">
+                      {convertHtmlToReact(item.description)}
                     </span>
                     <div className="flex flex-wrap gap-3 mt-10">
                       {item.skills.map((skill, index) => {

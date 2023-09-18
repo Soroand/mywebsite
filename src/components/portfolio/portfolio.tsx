@@ -20,8 +20,8 @@ const Portfolio = (props: Props) => {
       image: "/assets/portfolio/beanfield/beanfield_website.webp",
       project: "Web app",
       description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
-      link: "https://www.beanfield.com/",
+        "Frontend development of a new website for Beanfield Metroconnect, a Canadian ISP. The website is built with React, Redux Toolkit, RTK query and SCSS.",
+      link: "https://www.beanfield.com/residential",
       btnText: "Live Demo",
     },
     {
@@ -30,7 +30,7 @@ const Portfolio = (props: Props) => {
       image: "/assets/portfolio/1511/1511_website.webp",
       project: "Web app",
       description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
+        "Fullstack development of a new website for 1511 Paris, a French fashion brand. The website is built with React, Redux Toolkit, RTK query and SCSS.",
       link: "https://1511.paris",
       btnText: "Live Demo",
     },
@@ -40,7 +40,7 @@ const Portfolio = (props: Props) => {
       image: "/assets/portfolio/herstasis/herstasis_app.webp",
       project: "Mobile App",
       description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
+        "React Native application for menapuse health tracking and management. The app is built with React Native, Redux and SAGA.",
       link: "https://www.wewearmanyhats.com",
       btnText: "GitHub",
     },
@@ -50,7 +50,7 @@ const Portfolio = (props: Props) => {
       image: "/assets/portfolio/manyhats/manyhats_website.webp",
       project: "Web App",
       description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
+        "Corporate website for Many Hats, a Canadian digital agency. The website is built with NextJS, Redux Toolkit, RTK query and SCSS.",
       link: "https://www.wewearmanyhats.com",
       btnText: "Live Demo",
     },
@@ -60,7 +60,7 @@ const Portfolio = (props: Props) => {
       image: "/assets/portfolio/kidsecurity/kidsecurity_app.webp",
       project: "Mobile App",
       description:
-        "Developing front-end and mobile app solutions (B2C, B2B) in Travel Tech on React/Next.js framework and Flutter SDK.",
+        "React Native application for kids safety and security. The app is built with React Native, Redux and Thunk middleware.",
       link: "https://www.kidsecurity.org/en/",
       btnText: "Live Demo",
     },
@@ -81,7 +81,7 @@ const Portfolio = (props: Props) => {
               key={item.id}
               className="flex flex-col max-w-[322px] max-h-[497px] p-[1px] bg-card-border rounded-[18px] overflow-hidden"
             >
-              <div className="text-left pl-[37px] pb-[37px] pr-[45px] bg-about_card_bg rounded-[18px]">
+              <div className="text-left pl-[37px] pb-[37px] pr-[45px] bg-about_card_bg rounded-[18px] h-full">
                 <Image
                   alt={item.company + "image"}
                   src={item.image}
@@ -109,9 +109,6 @@ const Portfolio = (props: Props) => {
                 >
                   {item.btnText}
                 </CustomButton>
-                {/* <button className="font-[600] mt-[30px] w-content px-[35px] py-[22px] bg-btn_primary_bg text-text_black rounded-[9px] hover:cursor-pointer">
-                  Live Demo
-                </button> */}
               </div>
             </div>
           );
