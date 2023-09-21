@@ -40,6 +40,45 @@ export const employment: Employment[] = [
   },
   {
     id: 2,
+    name: "Lead Mobile Developer",
+    company: "Kid Security",
+    date: "2021 - 2022",
+    place: "Astana, Kazakhstan",
+    link: "https://kidsecurity.org/en/",
+    description: `As the Lead React Native Mobile Developer at Kid Security, I assumed a leadership role in managing and enhancing the mobile app development process, using React Native, Redux, and Redux Saga. My responsibilities extended beyond individual coding tasks to encompass various strategic and collaborative duties:<br/>
+<br/><br/>
+
+Technical Leadership:<br/>
+<p className="text-[14px] mt-[5px]">I provided technical leadership to a team of React Native developers, guiding them in best practices, code quality, and performance optimization. My role involved architectural decision-making, ensuring the scalability and maintainability of the mobile application.</p><br/><br/>
+
+Project Planning and Strategy:<br/>
+<p className="text-[14px] mt-[5px]">I collaborated with product managers and stakeholders to define project goals and requirements, translating them into a clear technical roadmap.I participated in project scoping, estimation, and milestone planning, ensuring that development efforts aligned with business objectives.</p><br/><br/>
+
+Feature Development and Optimization:<br/>
+<p className="text-[14px] mt-[5px]">I actively contributed to feature development, specializing in complex and critical components. I implemented performance optimization strategies, enhancing the app's responsiveness and reducing load times.</p><br/><br/>
+
+Technical Problem Solving:<br/>
+<p className="text-[14px] mt-[5px]">I actively addressed technical challenges and identified innovative solutions to improve the app's functionality and user experience. Troubleshooting and debugging were core aspects of my role, ensuring the stability of the mobile application. Troubleshooting and debugging were core aspects of my role, ensuring the stability of the mobile application.</p><br/><br/>
+
+Cross-Functional Collaboration:<br/>
+<p className="text-[14px] mt-[5px]">I collaborated closely with UI/UX designers to ensure pixel-perfect implementations and a seamless user experience. I facilitated effective communication between development, design, and product teams to meet project goals.</p><br/><br/>
+
+Documentation and Knowledge Sharing:</br>
+<p className="text-[14px] mt-[5px]">I maintained documentation for code, architecture, and technical processes, ensuring that knowledge was accessible and well-documented. Sharing knowledge and best practices within the team was a key responsibility to foster a culture of continuous improvement.</p><br/><br/>
+
+In my role as the Lead React Native Mobile Developer at Kid Security, I not only contributed to the technical excellence of the mobile app but also played a pivotal role in project planning, team coordination. My commitment to delivering a high-quality, user-centric application was instrumental in Kid Security's success in providing a safe and secure environment for families.
+      `,
+    skills: [
+      "React Native",
+      "Redux",
+      "Saga",
+      "Google Cloud",
+      "Firebase",
+      "Firestorage",
+    ],
+  },
+  {
+    id: 3,
     name: "Fullstack Developer",
     company: "1511 Paris",
     date: "Contract job",
@@ -88,10 +127,10 @@ Client Communication:<br/>
     ],
   },
   {
-    id: 3,
-    name: "Frontend Developer",
+    id: 4,
+    name: "Mobile Developer",
     company: "Rocket Firm Ltd",
-    date: "2020 - 2022",
+    date: "2018 - 2021",
     place: "Astana, Kazakhstan",
     link: "https://rocketfirm.com",
     description: `As a React Native Mobile Developer at Rocket Firm, I played a pivotal role in crafting high-quality mobile applications using a powerful tech stack that included React Native, Redux, Redux Saga, Firebase, and Firestore. My job duties encompassed a wide range of responsibilities to ensure the successful development of mobile apps:<br/><br/>
