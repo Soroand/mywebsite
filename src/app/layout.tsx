@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Welcome to Andrey Sorokin's Full-Stack Development Hub: Crafting Innovative Web Solutions for a Digital World.",
   keywords:
-    "Full-Stack Developer, Web Development, Front-End Development, Back-End Development, Andrey Sorokin, react, react js, next js, nextjs, mongodb, firebase, aws, amazon, portfolio, web developer, web development, software engineer, software development, software developer, fullstack developer, fullstack development, full-stack developer, full-stack development, full stack developer, full stack development, fullstack, full-stack, full stack, developer, development, engineer, engineering, programmer, programming, coding, code, javascript,",
+    "Full-Stack Developer, Andrey Sorokin, Web Development, Front-End Development, Back-End Development, Andrey Sorokin, react, react js, next js, nextjs, mongodb, firebase, aws, amazon, portfolio, web developer, web development, software engineer, software development, software developer, fullstack developer, fullstack development, full-stack developer, full-stack development, full stack developer, full stack development, fullstack, full-stack, full stack, developer, development, engineer, engineering, programmer, programming, coding, code, javascript,",
 };
 
 export default function RootLayout({

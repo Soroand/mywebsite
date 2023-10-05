@@ -41,8 +41,8 @@ const Portfolio = (props: Props) => {
       project: "Mobile App",
       description:
         "React Native application for menapuse health tracking and management. The app is built with React Native, Redux and SAGA.",
-      link: "https://www.wewearmanyhats.com",
-      btnText: "GitHub",
+      link: "https://www.herstasis.com/",
+      btnText: "Live Demo",
     },
     {
       id: 4,
