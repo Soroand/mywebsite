@@ -83,7 +83,8 @@ const Portfolio = (props: Props) => {
             >
               <div className="text-left pl-[37px] pb-[37px] pr-[45px] bg-about_card_bg rounded-[18px] h-full">
                 <Image
-                  alt={item.company + "image"}
+                  title="Portfolio image"
+                  alt={item.company + " image"}
                   src={item.image}
                   width={297}
                   height={223}
