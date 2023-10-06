@@ -74,7 +74,8 @@ const TabBar = (props: Props) => {
   };
 
   useEffect(() => {
-    const footerH = localStorage?.getItem("footerPosition") || 0;
+    const footerH: number =
+      Number(localStorage?.getItem("footerPosition")) || 0;
     if (height > 200 && tabBarHeight > 35) {
       setTabBarHeight(35);
     }
@@ -88,7 +89,7 @@ const TabBar = (props: Props) => {
     if (width < 768 && tabBarHeight === 125) {
       setTabBarHeight(35);
     }
-    if (height > Number(footerH)) {
+    if (height > Number(footerH - 350)) {
       setDisplayBar("none");
     } else {
       setDisplayBar("flex");

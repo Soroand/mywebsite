@@ -10,6 +10,16 @@ export const metadata: Metadata = {
     "Welcome to Andrey Sorokin's Full-Stack Development Hub: Crafting Innovative Web Solutions for a Digital World.",
   keywords:
     "Full-Stack Developer, Andrey Sorokin, Web Development, Front-End Development, Back-End Development, Andrey Sorokin, react, react js, next js, nextjs, mongodb, firebase, aws, amazon, portfolio, web developer, web development, software engineer, software development, software developer, fullstack developer, fullstack development, full-stack developer, full-stack development, full stack developer, full stack development, fullstack, full-stack, full stack, developer, development, engineer, engineering, programmer, programming, coding, code, javascript,",
+  openGraph: {
+    title: "Andrey Sorokin | Fullstack Developer",
+    description:
+      "Welcome to Andrey Sorokin's Full-Stack Development Hub: Crafting Innovative Web Solutions for a Digital World.",
+    url: "https://www.andreysorokin.com",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.andreysorokin.com",
+  },
 };
 
 export default function RootLayout({
